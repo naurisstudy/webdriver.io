@@ -62,7 +62,7 @@ describe("4 SCENARIOS - first tasks", () => {
     if (dynamicItems.length > 0) {
       console.log("Dynamic items are present.");
       dynamicItems.forEach((item) => {
-        const itemText = item.getText();
+        const itemText = item.getText();  
         if (itemText) {
           console.log("Dynamic items has text.");
         } else {

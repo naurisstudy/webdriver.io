@@ -8,7 +8,7 @@
     "wdio": "wdio run ./wdio.conf.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Nauris Kostjuks",
   "license": "ISC",
   "devDependencies": {
     "@wdio/cli": "^8.20.2",

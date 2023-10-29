@@ -23,7 +23,7 @@ describe("4 SCENARIOS - first tasks", () => {
     );
   });
 
-  it("Scenario - 3, should show an error message", () => {
+  it("Scenario 3, should show an error message", () => {
     browser.url("https://the-internet.herokuapp.com/login");
     const username = $("#username");
     const password = $("#password");

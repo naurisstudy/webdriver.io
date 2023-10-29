@@ -1,16 +1,53 @@
-const { expect, browser, $ } = require('@wdio/globals')
+describe("4 SCENARIOS", () => {
+  it("Scenario 1: verify page title", () => {
+    browser.url("https://the-internet.herokuapp.com/");
 
-describe('My Login application', () => {
-    it('should login with valid credentials', async () => {
-        await browser.url(`https://the-internet.herokuapp.com/login`)
+    const pageTitle = $("//h3");
+    const expectedTitle = "Welcome to the Internet";
 
-        await $('#username').setValue('tomsmith')
-        await $('#password').setValue('SuperSecretPassword!')
-        await $('button[type="submit"]').click()
+    expect(pageTitle).toHaveText(expectedTitle);
+  });
+  it("Scenario 2, log in with valid credentials", () => {
+    browser.url("https://the-internet.herokuapp.com/login");
+    const username = $("#username");
+    const password = $("#password");
+    const loginButton = $('//button[contains(text(), "Login")]');
 
-        await expect($('#flash')).toBeExisting()
-        await expect($('#flash')).toHaveTextContaining(
-            'You logged into a secure area!')
-    })
-})
+    username.setValue("tomsmith");
+    password.setValue("SuperSecretPassword!");
+    loginButton.click();
 
+    const successMessage = $(".flash.success");
+    expect(successMessage).toHaveTextContaining(
+      "You logged into a secure area."
+    );
+  });
+
+  it("Scenario - 3, should show an error message", () => {
+    browser.url("https://the-internet.herokuapp.com/login");
+    const username = $("#username");
+    const password = $("#password");
+    const loginButton = $("button.radius");
+
+    username.setValue("notreal");
+    password.setValue("easypassword");
+    loginButton.click();
+
+    const errorMessage = $(".flash.error");
+    expect(errorMessage).toHaveTextContaining("Your username is invalid!");
+  });
+  it("Scenario 4: interact with dropdown", () => {
+    browser.url("https://the-internet.herokuapp.com/dropdown");
+
+    const dropdown = $("select#dropdown");
+
+    dropdown.selectByVisibleText("Option 2");
+    const selectedOption = dropdown.getValue();
+
+    if (selectedOption === "2") {
+      console.log("dropdown selection is correct.");
+    } else {
+      console.error("dropdown selection is incorrect.");
+    }
+  });
+});

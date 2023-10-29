@@ -15,5 +15,8 @@
     "@wdio/local-runner": "^8.20.0",
     "@wdio/mocha-framework": "^8.20.0",
     "@wdio/spec-reporter": "^8.20.0"
+  },
+  "dependencies": {
+    "chai": "^4.3.10"
   }
 }

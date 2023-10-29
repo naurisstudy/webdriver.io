@@ -1,4 +1,4 @@
-describe("4 SCENARIOS", () => {
+describe("4 SCENARIOS - first tasks", () => {
   it("Scenario 1: verify page title", () => {
     browser.url("https://the-internet.herokuapp.com/");
 

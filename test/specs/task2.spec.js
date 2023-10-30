@@ -1,4 +1,4 @@
-describe("task2, custom click", () => {
+describe("task 2", () => {
   before(() => {
     browser.url("https://the-internet.herokuapp.com");
   });

@@ -49,9 +49,9 @@ describe("4 SCENARIOS - first tasks", () => {
     const selectedOption = dropdown.getValue();
 
     if (selectedOption === "2") {
-      console.log("Dropdown selection is correct.");
+      console.log("Dropdown is correct.");
     } else {
-      console.error("Dropdown selection is incorrect.");
+      console.error("Dropdown is incorrect.");
     }
   });
   it("Scenario 5: dynamic content", () => {
@@ -64,9 +64,9 @@ describe("4 SCENARIOS - first tasks", () => {
       dynamicItems.forEach((item) => {
         const itemText = item.getText();  
         if (itemText) {
-          console.log("Dynamic items has text.");
+          console.log("It has text.");
         } else {
-          console.error("Dynamic items is empty.");
+          console.error("It is empty.");
         }
       });
     } else {
